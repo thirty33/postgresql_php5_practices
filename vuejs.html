@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Php5 practices</title>
+</head>
+<body>
+    <div id="app" class="main_class">
+        <h1>{{message}}</h1>
+        <todo-item></todo-item>
+        <button v-on:click="reverseMessage">Reverse Message</button>
+    </div>
+</body>
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script>
+    
+    Vue.component('todo-item', {
+        template: '<li>This is a todo</li>'
+    })
+
+    var app5 = new Vue({
+        el: '#app',
+        data : {
+            message : "Hola a todos"
+        },
+        methods: {
+            reverseMessage () {
+                this.message = this.message.split('').reverse().join('')
+                
+            }
+        }
+    })
+
+</script>
+
+<style lang="css">
+    .main_class {
+        background-color: #cccccc;
+    }
+</style>
