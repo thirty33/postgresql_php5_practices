@@ -15,6 +15,8 @@
             else echo "connection succesfull";
         }
 
+        
+
         public function close()
         {
             pg_close($this->db);
@@ -69,7 +71,8 @@
         // Returns last insert $id
         public function insert($sql, $id='id')
         {
-            $sql .= ' RETURNING '.$id;
+
+            // $sql .= ' RETURNING '.$id;
             $result = pg_query($this->db, $sql);
             if (pg_last_error()) exit(pg_last_error());
             $this->last_id = pg_fetch_result($result, 0);
