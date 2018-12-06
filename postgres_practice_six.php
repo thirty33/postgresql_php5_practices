@@ -1,6 +1,8 @@
 <?php
     require "index.php";
     $pg = new PgSql();
+
+    
     //Modificacion de columnas.
 
     $sql = "ALTER TABLE vehiculo ALTER Column descripcion type varchar(50)";
